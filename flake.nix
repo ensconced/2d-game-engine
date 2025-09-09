@@ -10,8 +10,11 @@
     in {
       devShells.${system}.default = pkgs.mkShell {
         packages = with pkgs; [
-          git
-          neovim
+	  sdl2-compat
+	  SDL2_image
+	  SDL2_ttf
+	  SDL2_mixer
+	  lua5_3
         ];
       };
     };
