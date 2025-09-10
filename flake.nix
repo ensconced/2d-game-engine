@@ -10,7 +10,8 @@
     in {
       devShells.${system}.default = pkgs.mkShell {
         packages = with pkgs; [
-	  sdl2-compat
+	  gcc
+	  SDL2
 	  SDL2_image
 	  SDL2_ttf
 	  SDL2_mixer
