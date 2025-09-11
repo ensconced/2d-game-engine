@@ -1,5 +1,12 @@
 build:
-	g++ -Wall -std=c++17 `pkg-config --cflags sdl2` `pkg-config --libs sdl2` src/*.cpp -o gameengine;
+	g++ \
+	-Wall \
+	-std=c++17 \
+	-I"./libs/" \
+	`pkg-config --cflags --libs sdl2` \
+	`pkg-config --cflags --libs lua5.3` \
+	src/*.cpp \
+	-o gameengine;
 
 run:
 	./gameengine
