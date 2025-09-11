@@ -1,0 +1,2 @@
+- sort out nix formatting
+- sort out C++ formatting, LSP etc.
