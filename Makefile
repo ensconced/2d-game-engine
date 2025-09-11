@@ -1,5 +1,5 @@
 build:
-	g++ -Wall -std=c++17 src/*.cpp -lSDL2 -llua5.3 -o gameengine;
+	g++ -Wall -std=c++17 `pkg-config --cflags sdl2` `pkg-config --libs sdl2` src/*.cpp -o gameengine;
 
 run:
 	./gameengine
