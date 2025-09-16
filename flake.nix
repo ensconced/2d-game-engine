@@ -19,6 +19,7 @@
 	  pkgs.SDL2_ttf
 	  pkgs.SDL2_mixer
 	  pkgs.lua5_3
+	  pkgs.clang-tools # powers LSP in nvim
 	];
       };
     };
