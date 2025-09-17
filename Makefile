@@ -8,7 +8,7 @@ gameengine:
 compile_flags.txt:
 	echo ${CFLAGS} | tr ' ' '\n' > compile_flags.txt
 
-run:
+run: gameengine
 	./gameengine
 
 clean:

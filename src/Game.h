@@ -1,5 +1,4 @@
-#ifndef GAME_H
-#define GAME_H
+#pragma once
 
 class Game {
 private:
@@ -13,5 +12,3 @@ public:
   void Render();
   void Destroy();
 };
-
-#endif
