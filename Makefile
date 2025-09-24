@@ -2,7 +2,7 @@
 
 CFLAGS := -Wall -std=c++17 -I"./libs/" $(shell pkg-config --cflags --libs sdl2) $(shell pkg-config --cflags --libs lua5.3)
 
-gameengine:
+gameengine: src/Game.cpp
 	g++ ${CFLAGS} src/*.cpp -o gameengine
 
 compile_flags.txt:
