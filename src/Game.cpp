@@ -1,5 +1,6 @@
 #include "Game.h"
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 #include <iostream>
 
 Game::Game() {
@@ -25,7 +26,8 @@ void Game::Initialize() {
     return;
   }
 
-  renderer = SDL_CreateRenderer(window, -1, 0);
+  renderer = SDL_CreateRenderer(
+      window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
   if (!renderer) {
     std::cerr << "Error creating SDL renderer." << std::endl;
     return;
@@ -35,7 +37,12 @@ void Game::Initialize() {
   isRunning = true;
 }
 
+void Game::Setup() {
+  // TODO - initialise game objects
+}
+
 void Game::Run() {
+  Setup();
   while (isRunning) {
     ProcessInput();
     Update();
@@ -66,9 +73,14 @@ void Game::Update() {
 }
 
 void Game::Render() {
-  SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
+  SDL_SetRenderDrawColor(renderer, 21, 21, 21, 255);
   SDL_RenderClear(renderer);
-  // TODO - render all game objects into the backbuffer
+
+  SDL_Surface *surface = IMG_Load("./assets/images/tank-tiger-right.png");
+  SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer, surface);
+  SDL_FreeSurface(surface);
+  SDL_RenderCopy(renderer, texture, NULL, NULL);
+
   SDL_RenderPresent(renderer);
 }
 
