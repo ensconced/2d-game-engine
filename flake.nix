@@ -12,6 +12,7 @@
         nativeBuildInputs = [
 	  pkgs.gcc
 	  pkgs.pkg-config
+	  pkgs.clang-tools
 	];
 	buildInputs = [
 	  pkgs.SDL2
